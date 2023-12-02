@@ -1,0 +1,245 @@
+#Python P1 Write a python program that asks the user to enter their name and their age and Print
+
+# out a message addressed to them that tells them the year that they will turn 100 years old.
+
+from datetime import date
+
+name=input("Enter your name:")
+
+print(name)
+
+age=input("Enter age")
+
+age=float(age)
+
+print(age)
+
+year=100-age
+
+print(year)
+
+# creating the date object of today's date
+
+todays_date = date.today()
+
+ # printing todays date
+
+print("Current date: ", todays_date)
+
+# fetching the current year, month and day of today
+
+print("You will be 100 years old in year : ",int(todays_date.year+year))
+
+------------------------------------------------------------------------------------
+
+#Python P2 : Write a program to check whether the number is even or odd, print out an appropriate 
+
+# message to the user
+
+c=input("Enter a number to check even or odd:")
+
+c=int(c)
+
+print(c)
+
+if c%2 == 0:
+
+ print(c,"is Even")
+
+else: 
+
+ print(c,"is Odd")
+
+------------------------------------------------------------------------------------
+
+#Python P3: Write a program which will find all such numbers which are divisible by 7.
+
+endno=input("Enter end number upto which you want to find all numbers which are divisible by 7:")
+
+print(endno)
+
+e=int(endno)
+
+for i in range(1, e,1):
+
+ if i%7==0:
+
+ print("Numbers divisible by 7 is :",i)
+
+------------------------------------------------------------------------------------
+
+#python P4 :Write a program that takes a list of numbers (for example, a = [5, 10, 15, 20, 25]) and
+
+# makes a new list of only the first and last elements of the given list. Write this code inside a 
+
+# function.
+
+c = [5, 10, 15, 20, 25] 
+
+print ("Old list:",c) 
+
+def firstLast (a): 
+
+ new_list = [(a[0],a[-1])] 
+
+ print ("New List: ",new_list) 
+
+firstLast(c)
+
+------------------------------------------------------------------------------------
+
+python P5: Write a program that returns a list that contains only the elements that are common 
+
+between the lists (without duplicates). Make sure your program works on two lists of different sizes.
+
+# Find common elements in both lists.
+
+list1=[6,7,8,233,44,233,700]
+
+list2=[8,55,99,233,233,7]
+
+if len(list1)==len(list2):
+
+ print("Lists have same length")
+
+else:
+
+ print("Lists do not have same length")
+
+ print(" Common elements in both lists ")
+
+ print(set(list1).intersection(list2))
+
+------------------------------------------------------------------------------------
+
+# python P6: Write a program (using functions!) that asks the user for a long string containing 
+
+multiple words. Print back to the user the same string, except with the words in backwards order. 
+
+# E.gif input is “ I am Msc student” output is : ”student Msc am I” 
+
+inputString = input("Enter you string : ") 
+
+print(inputString) 
+
+inputString = inputString.split(" ") 
+
+print(inputString) 
+
+inputString.reverse() 
+
+inputString = " ".join(inputString) 
+
+print(inputString)
+
+------------------------------------------------------------------------------------
+
+# python P7: Write a Python program to solve the Fibonacci sequence using recursion. 
+
+def fibbonci(n): 
+
+ if n in {0,1}: 
+
+ return n 
+
+ else: 
+
+ return (fibbonci(n-1)+fibbonci(n-2)) 
+
+no=int(input("Enter number of terms upto which fibbonci series to print: ")) 
+
+for i in range(0,no,1): 
+
+ print(fibbonci(i))
+
+------------------------------------------------------------------------------------
+
+# python P8: Write a Python program to copy the contents of a file to another file 
+
+with open('first.txt','r') as firstfile, open('second.txt','a') as secondfile: 
+
+ for line in firstfile: 
+
+ secondfile.write(line) 
+
+print("done successfully")
+
+------------------------------------------------------------------------------------
+
+# python P9: Write a Python class named Circle constructed by a radius and two methods whichwill 
+
+#compute the area and the perimeter of a circle
+
+class Circle():
+
+ def radius(self,radius):
+
+ r = radius
+
+ def area(self,r):
+
+ area = 3.142*r*r
+
+ print("Area of the circle is: ",area)
+
+ def peri(self,r):
+
+ peri = 2*3.14*r
+
+ print("Perimeter of the circle is: ",peri)
+
+obj = Circle()
+
+radius = int(input("Enter the radius of circle: "))
+
+obj.area(radius)
+
+obj.peri(radius)
+
+------------------------------------------------------------------------------------
+
+# python P10: Write a program that prints out all the elements of the list that are less than 10 
+
+list1=[1,7,8,2,99,56,3] 
+
+for x in list1: 
+
+ if x<10: 
+
+ print(x)
+
+------------------------------------------------------------------------------------
+
+# python P11: Write a program that accepts a sentence & calculate the number of letters and digits. 
+
+s = input("Input a string: ") 
+
+d=l=0 
+
+for c in s: 
+
+ if c.isdigit(): 
+
+ d=d+1 
+
+ elif c.isalpha():
+
+ l=l+1 
+
+ else: 
+
+ pass 
+
+print("Letters", l) 
+
+print("Digits", d)
+
+------------------------------------------------------------------------------------
+
+# python P12: Write a Python program to count the number of lines in a text file. 
+
+with open("first.txt", 'r') as fp: 
+
+ lines = len(fp.readlines()) 
+
+print('Total Number of lines:', lines)
